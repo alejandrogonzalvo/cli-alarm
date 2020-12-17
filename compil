@@ -1,0 +1,4 @@
+gcc menu3.c fns/adlgetch.c fns/fadlkh.c -o mx
+pause
+echo "Ejecutando"
+./mx

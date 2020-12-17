@@ -1,0 +1,2 @@
+void hora();
+void temporizador();

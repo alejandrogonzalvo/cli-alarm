@@ -18,12 +18,12 @@ int segundos;
 
 
 void alarmaHandler(int sig){
-    while(segundos > 0) {
-        printf("%d", segundos);
-        segundos = segundos - 1;
-        alarm(1);
-    }
+    system("clear");
+    printf("despierta!");
+    fflush(stdout);
+    sleep(5);
 }
+
 
 int main()
 {
@@ -58,7 +58,7 @@ int main()
                     infotiempo = localtime(&tiempo);
                     segundos = (hora - infotiempo->tm_hour)*3600 +
                         (minuto - infotiempo->tm_min)*60;
-                    printf("%d",segundos);
+                    alarm(1);
                     break;
                 case 3:
                     printf("Introduce los segundos para el temporizador \n");

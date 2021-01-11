@@ -58,10 +58,14 @@ int main()
                     infotiempo = localtime(&tiempo);
                     segundos = (hora - infotiempo->tm_hour)*3600 +
                         (minuto - infotiempo->tm_min)*60;
-                    alarm(1);
+                    alarm(segundos);
+                    printf("la alarma se ejecutara en %d segundos", segundos);
+                    fflush(stdout);
+                    sleep(5);
                     break;
                 case 3:
                     printf("Introduce los segundos para el temporizador \n");
+                    fflush(stdout);
                     scanf("%d", &segundos);
                     for (segundos; segundos > 0; --segundos){
                         system("clear");

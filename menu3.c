@@ -28,6 +28,7 @@ void alarmaHandler(int sig){
 int main()
 {
     signal(SIGALRM, alarmaHandler);
+    char tecla;
     int pulsado;
     int hora;
     int minuto;
@@ -44,6 +45,21 @@ int main()
             {
                 case 1:
                     while(1){
+                        if (fgets(tecla, sizeof tecla, stdin) == NULL) {
+                            printf("no input");
+                            fflush(stdout);
+                            sleep(2);
+                        }
+
+                        else{
+                            printf("tecla pulsada: %c", tecla);
+                            fflush(stdout);
+                            sleep(2);
+                        }
+
+                        if (tecla == 'x'){
+                            break;
+                        }
                         system("clear");
                         time(&tiempo);
                         printf("\n\n\n\t\t%s", ctime(&tiempo));
